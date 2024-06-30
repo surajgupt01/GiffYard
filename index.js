@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/search', async (req, res) => {
+    var date = new Date()
     const apikey = "LIVDSRZULELA";
     const lmt = 15;
     const search = req.body.srch;
@@ -26,7 +27,7 @@ app.post('/search', async (req, res) => {
     }
 
     const tenorUrl = `https://g.tenor.com/v1/search?q=${search}&key=${apikey}&limit=${lmt}`;
-    const newsUrl = `https://newsapi.org/v2/everything?q=${search}&language=en&from=2024-05-29&sortBy=publishedAt&apiKey=f777da2e89e34172a5b5a618873b6235`;
+    const newsUrl = `https://newsapi.org/v2/everything?q=${search}&language=en&from=${date}&sortBy=publishedAt&apiKey=f777da2e89e34172a5b5a618873b6235`;
 
     try {
         let gifsResponse = {};
