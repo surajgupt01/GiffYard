@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/search', async (req, res) => {
-    var date = new Date()
+    let date = new Date()
     const apikey = "LIVDSRZULELA";
     const lmt = 15;
     const search = req.body.srch;
